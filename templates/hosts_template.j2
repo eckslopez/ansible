@@ -1,0 +1,5 @@
+# /etc/hosts managed by Ansible
+
+{% for host in ansible_play_hosts_all %}
+{{ hostvars[host].ansible_host }}   {{ hostvars[host].inventory_hostname }}
+{% endfor %}
