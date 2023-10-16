@@ -1,6 +1,6 @@
 ---
 - name: Establish a base configuration for all hosts.
-  hosts: all
+  hosts: mirko
   become: true
   gather_facts: true
   tasks:
@@ -34,3 +34,9 @@
       ansible.builtin.template:
         src: ../templates/hosts_template.j2
         dest: /etc/hosts
+    # Configure as NTP clients
+    - name: Allow ntp through firewall
+      shell: firewall-cmd --zone=public --add-port=123/udp --permanent
+    - name: Reload firewall
+      shell: firewall-cmd --reload
+    
