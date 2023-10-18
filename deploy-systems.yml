@@ -1,6 +1,6 @@
 ---
 - name: Establish a base configuration for all hosts.
-  hosts: mirko
+  hosts: all
   become: true
   gather_facts: true
   tasks:
