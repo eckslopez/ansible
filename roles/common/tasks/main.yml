@@ -4,32 +4,6 @@
   become: true
   gather_facts: true
   tasks:
-    # Do this as your admin user
-    - name: Ensure the 'ansible' user exists
-      ansible.builtin.user:
-        name: ansible
-        state: present
-        createhome: true
-    - name: Copy ssh key to remote host
-      ansible.posix.authorized_key:
-        user: ansible
-        state: present
-        key: "{{ lookup('file', '~/.ssh/ansible.pub') }}"
-    - name: Make ansible a sudoer
-      ansible.builtin.copy:
-        src: ans
-        dest: /etc/sudoers.d/
-        mode: "0440"
-        validate: /usr/sbin/visudo -csf %s
-    - name: Update CentOS (using yum)
-      ansible.builtin.yum:
-        name: '*'
-        state: latest
-      when: ansible_os_family == 'RedHat'
-    - name: Update Ubuntu (using apt)
-      ansible.builtin.apt:
-        upgrade: 'yes'
-      when: ansible_os_family == 'Debian'
     - name: Copy /etc/hosts template
       ansible.builtin.template:
         src: ../templates/hosts_template.j2
