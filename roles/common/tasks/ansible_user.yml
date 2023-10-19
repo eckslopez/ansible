@@ -1,3 +1,8 @@
+---
+- name: Create 'ansible' user and make him a passwordless sudoer
+  hosts: all
+  become: true
+  tasks:
     - name: Ensure the 'ansible' user exists
       ansible.builtin.user:
         name: ansible

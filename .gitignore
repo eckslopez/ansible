@@ -1,3 +1,5 @@
+# Ansible public key file
+ans
 # build products...
 *.py[co]
 build

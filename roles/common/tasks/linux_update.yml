@@ -1,3 +1,8 @@
+---
+- name: Update Linux
+  hosts: all
+  become: true 
+  tasks:
     - name: Update CentOS (using yum)
       ansible.builtin.yum:
         name: '*'
