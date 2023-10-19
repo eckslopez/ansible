@@ -1,4 +1,4 @@
-    - name: Allow ntp through firewall
-      shell: firewall-cmd --zone=public --add-port=123/udp --permanent
-    - name: Reload firewall
-      shell: firewall-cmd --reload
+- name: Allow ntp through firewall
+  shell: firewall-cmd --zone=public --add-port=123/udp --permanent
+- name: Reload firewall
+  shell: firewall-cmd --reload

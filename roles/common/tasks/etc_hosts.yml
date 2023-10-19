@@ -1,9 +1,4 @@
----
-- name: Configure /etc/hosts
-  hosts: all
-  become: true
-  tasks:
-    - name: Copy /etc/hosts template
-      ansible.builtin.template:
-        src: ../templates/hosts_template.j2
-        dest: /etc/hosts
+- name: Copy /etc/hosts template
+  ansible.builtin.template:
+    src: ../templates/hosts_template.j2
+    dest: /etc/hosts
