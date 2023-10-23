@@ -1,0 +1,5 @@
+---
+
+osquery_version: 4.9.0-1
+osquery_dpkg_url: "https://pkg.osquery.io/deb/osquery_{{ osquery_version }}.linux_amd64.deb"
+osquery_dpkg_sha: sha256:65298f8320df25236bf212227e0f1f429c4019385c9c8576f7bad0a2c605cf5c
