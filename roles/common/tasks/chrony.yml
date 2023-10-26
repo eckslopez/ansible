@@ -13,7 +13,7 @@
   ansible.builtin.copy:
     dest: "{{ chrony_conf }}"
     src: '../files/chrony.conf'
-  notify: 'restart_chrony'
+  notify: restart chrony
 
 
 
