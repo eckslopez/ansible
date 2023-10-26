@@ -1,10 +1,10 @@
 - name: 'Install the Apache Webserver'
   ansible.builtin.package:
-    name: 'httpd'
+    name: "{{ apache_pkg }}"
     state: 'present'
 - name: 'Ensure web server is running an enabled'
   ansible.builtin.service:
-    name: 'httpd'
+    name: "{{ apache_svc }}"
     state: 'started'
     enabled: true
 - name: 'Copy some web content'

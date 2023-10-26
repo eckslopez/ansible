@@ -6,3 +6,6 @@
 
 - name: Update Linux
   import_tasks: linux_update.yml
+
+- name: Manage the chrony timeserver
+  import_tasks: chrony.yml
