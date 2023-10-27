@@ -1,0 +1,17 @@
+- name: 'Install LVM2'
+  ansible.builtin.apt:
+    name: lvm2
+    state: present
+
+- name: 'Enable LVM2'
+  ansible.builtin.systemd:
+    name: lvm2
+    enabled: true 
+    masked: no
+
+- name: 'Start LVM2'
+  ansible.builtin.systemd:
+    state: started
+    name: lvm2 
+
+
