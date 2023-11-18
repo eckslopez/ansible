@@ -3,4 +3,4 @@
   ignore_unreachable: true
   roles:
     - common
-    - webtier
+    - apache
