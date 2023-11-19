@@ -15,11 +15,11 @@ ufw_rules:
     to_port: 22
 
 # Manage the configuration file
-ufw_manage_config: false
+ufw_manage_config: true
 
 # Configuration object passed to the configuration file
 ufw_config:
-  IPV6: "yes"
+  IPV6: "no"
   DEFAULT_INPUT_POLICY: DROP
   DEFAULT_OUTPUT_POLICY: ACCEPT
   DEFAULT_FORWARD_POLICY: DROP
