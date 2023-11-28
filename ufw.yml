@@ -1,6 +1,5 @@
 # @see https://docs.ansible.com/ansible/latest/collections/community/general/ufw_module.html#examples
 ---
-
 - hosts: sherman
   become: true
   roles:
@@ -17,9 +16,13 @@
       - rule: allow
         to_port: '80'
         proto: tcp
-      # Allow all access to tcp port 4000
+      # Allow all access to tcp port 4000 for Jekyll site
       - rule: allow
         to_port: '4000'
+        proto: tcp
+      # Allow all access to tcp port 35729 for Jekyll live-reload
+      - rule: allow
+        to_port: '35729'
         proto: tcp
     # Manage the configuration file
     ufw_manage_config: true
