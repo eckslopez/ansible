@@ -4,6 +4,7 @@
 - hosts: sherman
   become: true
   roles:
+    - common
     - ufw
   vars:
     ufw_rules:

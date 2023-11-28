@@ -1,6 +1,5 @@
 ---
-- hosts: dick
+- hosts: sherman
   roles:
     - common
-    - nfs-server
     - lvm

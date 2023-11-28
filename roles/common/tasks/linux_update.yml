@@ -3,6 +3,12 @@
     name: '*'
     state: latest
   when: ansible_os_family == 'RedHat'
+
+- name: Install a list of packages with a list variable
+  ansible.builtin.yum:
+    name: "{{ packages }}"
+  when: ansible_os_family == 'RedHat'
+  
 - name: Update Ubuntu (using apt)
   ansible.builtin.apt:
     upgrade: 'yes'
