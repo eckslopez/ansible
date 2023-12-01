@@ -1,36 +1,37 @@
-# This is a playbook that uses a module, unlike the others in this project that use roles.
+# This is a playbook that uses the virt module directly,
+# unlike others in this project that use them indirectly, through roles.
 # To run it, do `ansible-playbook virt.yml --ask-become-pass`
+# An example of an ad-hoc statement, using the virt module:
+# `ansible host -m virt -m "name=alpha command=status`
 ---
 - name: Manage libvirt VMs
   hosts: localhost
 
   tasks:
-  - name: Get a list of all libvirt guests
-    community.libvirt.virt:
-      command: list_vms
-    register: libvirt_guests
+    - name: Get a list of all libvirt guests
+      community.libvirt.virt:
+        command: list_vms
+      register: libvirt_guests
 
-  - name: Display the list of all libvirt guests
-    debug:
-      var: libvirt_guests
+    - name: Display the list of all libvirt guests
+      ansible.builtin.debug:
+        var: libvirt_guests
 
-  - name: List all running vms 
-    community.libvirt.virt: 
-      command: list_vms
-      state: running 
-    register: running_vms
+    - name: List all running vms
+      community.libvirt.virt:
+        command: list_vms
+        state: running
+      register: running_vms
 
-  - name: Print list
-    debug:
-      var: running_vms
+    - name: Print list
+      ansible.builtin.debug:
+        var: running_vms
 
 #    - name: Start mirko
 #      community.libvirt.virt:
 #        command: start
 #        name: mirko
 #      register: mirko_status
-
-#    - name: Check mirko's status 
+#    - name: Check mirko's status
 #      debug:
 #        var: mirko_status
-      
