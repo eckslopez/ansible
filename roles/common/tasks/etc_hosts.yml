@@ -2,3 +2,4 @@
   ansible.builtin.template:
     src: ../templates/etc.hosts.j2
     dest: /etc/hosts
+    force: no

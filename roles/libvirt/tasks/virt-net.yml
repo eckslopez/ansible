@@ -1,3 +1,9 @@
+---
+- hosts: sherman
+  become: true
+  roles:
+    - common
+    - ufw
 # This is a playbook that uses the virt module directly,
 # unlike others in this project that use them indirectly, through roles.
 # To run it, do `ansible-playbook virt.yml --ask-become-pass`

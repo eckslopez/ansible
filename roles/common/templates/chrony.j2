@@ -1,0 +1,19 @@
+# Public servers from the pool.ntp.org project.
+{% for server in ntp_servers %}
+{{ server }}
+{% endfor %}
+
+# Record the rate(in parts per million) at which the system clock gains/loses time.
+driftfile /var/lib/chrony/drift
+
+# Allow the system clock to be correected in the first three updates if error is above 1 second.
+makestep 1.0 3
+
+# This directive enables periodically syncing RTC & system time
+rtcsync
+
+keyfile /etc/chrony.keys
+leapsectz right/UTC
+
+# Specify directory for log files.
+logdir /var/log/chrony

@@ -1,0 +1,5 @@
+- name: VM Management
+  import_tasks: virt.yml
+
+- name: Network Management
+  import_tasks: virt-net.yml

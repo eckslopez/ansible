@@ -16,6 +16,10 @@
       - rule: allow
         to_port: '80'
         proto: tcp
+      # Allow all access to tcp port 123 for chrony
+      - rule: allow
+        from_port: '123'
+        proto: tcp
       # Allow all access to tcp port 4000 for Jekyll site
       - rule: allow
         to_port: '4000'
