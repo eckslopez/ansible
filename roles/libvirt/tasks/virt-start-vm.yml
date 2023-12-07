@@ -1,0 +1,9 @@
+#    - name: Start mirko
+#      community.libvirt.virt:
+#        command: start
+#        name: mirko
+#      register: mirko_status
+
+#    - name: Check mirko's status
+#      debug:
+#        var: mirko_status
