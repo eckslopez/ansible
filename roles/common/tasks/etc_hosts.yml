@@ -1,6 +1,7 @@
 - name: Copy /etc/hosts template
-  ansible.builtin.template:
-    src: ../templates/etc.hosts.j2
+  ansible.builtin.copy:
+    src: ../files/hosts
     dest: /etc/hosts
-    force: no
-
+    owner: root
+    group: root
+    mode: 0644
