@@ -1,0 +1,12 @@
+---
+- name: Start a single VM using community.libvirt.virt
+  hosts: localhost
+  gather_facts: false  # Disable facts gathering for this example
+
+  tasks:
+    - name: Start the specified VM
+      community.libvirt.virt:
+        command: start
+        name: "{{ vm_name }}"
+      vars:
+        vm_name: "{{ ansible_playbook_name | replace('.yml', '') }}"
