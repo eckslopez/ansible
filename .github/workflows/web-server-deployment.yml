@@ -1,23 +1,11 @@
-name: LA__ Deployment
-
+name: ansible-lint
 on:
-    workflow_dispatch:
-      
+  workflow_dispatch:
 jobs:
-    linting:
-      name: Lint Ansible files
-      runs-on: ubuntu-latest
-
-      steps:
-      - name: Checkout sources
-        uses: actions/checkout@v4
-      - name: Linting
-        uses: ansible/ansible-lint@v6.22.1
-        with:
-          fetch-depth: 0
-          ref: main
-          targets: |
-            ansible/lvm.yml
-            ansible/nfs-server.yml
-            ansible/ufw.yml
-            ansible/web-server.yml
+  build:
+    name: Ansible Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run ansible-lint
+        uses: ansible/ansible-lint@v6
