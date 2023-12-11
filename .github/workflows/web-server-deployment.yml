@@ -12,7 +12,7 @@ jobs:
       - name: Checkout sources
         uses: actions/checkout@v4
       - name: Linting
-        uses: ansible/ansible-lint-@v6.22.1
+        uses: ansible/ansible-lint@v6.22.1
         with:
           targets: |
             ansible/lvm.yml
