@@ -17,7 +17,5 @@ jobs:
           targets: |
             ansible/lvm.yml
             ansible/nfs-server.yml
-            ansible/start-vm.yml
             ansible/ufw.yml
-            ansible/virt.yml
             ansible/web-server.yml
