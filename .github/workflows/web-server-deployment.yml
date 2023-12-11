@@ -14,6 +14,8 @@ jobs:
       - name: Linting
         uses: ansible/ansible-lint@v6.22.1
         with:
+          fetch-depth: 0
+          ref: main
           targets: |
             ansible/lvm.yml
             ansible/nfs-server.yml
