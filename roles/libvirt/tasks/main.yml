@@ -1,9 +1,6 @@
 - name: VM Management
   import_tasks: virt-list-vms.yml
 
-- name: Start VMs
-  import_tasks: virt-start-vm.yml
-
 - name: Network Management
   import_tasks: virt-net.yml
  
