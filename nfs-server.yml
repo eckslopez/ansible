@@ -1,6 +1,6 @@
 ---
-- hosts: dick
+- name: Manage an NFS server.
+  hosts: dick
   roles:
     - common
     - nfs-server
-    - lvm

@@ -1,4 +1,5 @@
 ---
-- hosts: localhost
+- name: Manage libvirt guests on localhost.
+  hosts: localhost
   roles:
     - libvirt

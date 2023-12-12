@@ -1,7 +1,7 @@
 - name: Copy /etc/hosts template
   ansible.builtin.copy:
-    src: ../files/hosts
+    src: files/hosts
     dest: /etc/hosts
     owner: root
     group: root
-    mode: 0644
+    mode: '0644'

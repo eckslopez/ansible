@@ -11,3 +11,4 @@
   ansible.builtin.copy:
     dest: '/var/www/html/index.html'
     content: 'This is a simple webserver'
+    mode: '0644'

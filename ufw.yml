@@ -1,6 +1,7 @@
 # @see https://docs.ansible.com/ansible/latest/collections/community/general/ufw_module.html#examples
 ---
-- hosts: sherman
+- name: Manage Uncomplicated Firewall
+  hosts: sherman
   become: true
   roles:
     - common

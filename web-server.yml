@@ -1,5 +1,6 @@
 ---
-- hosts: webservers
+- name: Run common tasks and install and configure Apache.
+  hosts: webservers
   ignore_unreachable: true
   roles:
     - common

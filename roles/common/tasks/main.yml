@@ -1,11 +1,11 @@
 - name: Ansible user
-  import_tasks: ansible_user.yml
+  ansible.builtin.import_tasks: ansible_user.yml
 
 - name: Configure /etc/hosts
-  import_tasks: etc_hosts.yml
+  ansible.builtin.import_tasks: etc_hosts.yml
 
 - name: Update Linux
-  import_tasks: linux_update.yml
+  ansible.builtin.import_tasks: linux_update.yml
 
 - name: Manage the chrony timeserver
-  import_tasks: chrony.yml
+  ansible.builtin.import_tasks: chrony.yml

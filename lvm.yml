@@ -1,5 +1,6 @@
 ---
-- hosts: sherman
+- name: Manage Logical Volumes
+  hosts: sherman
   roles:
     - common
     - lvm

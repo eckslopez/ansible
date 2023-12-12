@@ -1,2 +1,2 @@
 - name: Install Apache
-  import_tasks: install_apache.yml
+  ansible.builtin.import_tasks: install_apache.yml

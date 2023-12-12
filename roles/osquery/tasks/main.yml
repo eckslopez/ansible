@@ -1,19 +1,20 @@
 ---
-
 - name: Check if osquery is installed
-  command: dpkg-query -W osquery
+  ansible.builtin.command:
+    cmd: dpkg-query -W osquery
   register: osquery_check_deb
   failed_when: osquery_check_deb.rc > 1
   changed_when: osquery_check_deb.rc == 1
 
 - name: Download my_package
-  get_url: 
+  ansible.builtin.get_url:
     url: "{{ osquery_dpkg_url }}"
     dest: "/tmp/osquery.deb"
+    mode: '0440'
     checksum: "{{ osquery_dpkg_sha }}"
   when: osquery_check_deb.rc == 1
-  
+
 - name: Install OSQuery
-  apt:
+  ansible.builtin.apt:
     deb: /tmp/osquery.deb
   when: osquery_check_deb.rc == 1

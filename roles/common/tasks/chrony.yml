@@ -1,19 +1,18 @@
 - name: Ensure chrony time server is installed
-  ansible.builtin.package: 
+  ansible.builtin.package:
     name: 'chrony'
     state: 'present'
 
 - name: 'Copy standard config file for chrony time server'
   ansible.builtin.template:
-    src: '../templates/chrony.j2'
+    src: templates/chrony.j2
     dest: "{{ chrony_conf }}"
-    mode: 0644
+    mode: '0644'
     owner: root
-  notify: restart chrony
+  notify: Restart chrony
 
 - name: 'Ensure chrony time server is enabled and running'
   ansible.builtin.service:
     name: "{{ chrony_svc }}"
     state: 'started'
     enabled: true
-

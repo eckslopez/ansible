@@ -1,5 +1,4 @@
 ---
-nfs_exports: ["/var/cluster_data *(rw,sync,no_root_squash)" ]
-
+nfs_exports: ["/var/cluster_data *(rw,sync,no_root_squash)"]
 nfs_rpcbind_state: started
 nfs_rpcbind_enabled: true

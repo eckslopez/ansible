@@ -1,0 +1,6 @@
+---
+- name: Install and configure minikube on localhost
+  hosts: localhost
+  become: true
+  roles:
+    - minikube

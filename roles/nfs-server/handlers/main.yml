@@ -1,3 +1,6 @@
 ---
-- name: reload nfs
-  command: 'exportfs -ra'
+- name: Reload nfs
+  ansible.builtin.command:
+    cmd: exportfs -ras
+  register: export_output
+  changed_when: export_output.rc != 0
