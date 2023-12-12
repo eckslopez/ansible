@@ -1,0 +1,6 @@
+# from galaxy
+---
+collections:
+  - community.libvirt
+  - community.general
+  - ansible.posix

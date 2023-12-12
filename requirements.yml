@@ -1,4 +1,0 @@
-# from galaxy
-- name: community.libvirt.virt
-- name: community.general.ufw
-- name: ansible.posix.authorized_key
