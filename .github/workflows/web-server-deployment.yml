@@ -1,6 +1,9 @@
 name: ansible-lint
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
 jobs:
   build:
     name: Ansible Lint
